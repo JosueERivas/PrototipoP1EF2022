@@ -13,6 +13,8 @@
 
 //Clases
 #include "Clscatalogo.h"
+#include "Clsproceso.h"
+#include "Clsinformes.h"
 
 using namespace std;
 
@@ -168,18 +170,21 @@ int login()
                 {
                     Clscatalogo catalogo;
                     catalogo.mmenuCatalogo();
+                    catalogo.~Clscatalogo();
                 }
                 break;
             case 2:
                 {
-                    cout<<"Usted esta en el apartado Procesos";
-                    getch();
+                    Clsproceso proceso;
+                    proceso.mmenuProceso();
+                    proceso.~Clsproceso();
                 }
                 break;
             case 3:
                 {
-                    cout<<"Usted esta en el apartado Informes";
-                    getch();
+                    Clsinformes informe;
+                    informe.mmenuInforme();
+                    informe.~Clsinformes();
                 }
                 break;
             case 0:
