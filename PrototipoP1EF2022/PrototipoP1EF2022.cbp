@@ -37,11 +37,13 @@
 		<Unit filename="include/Clsalumno.h" />
 		<Unit filename="include/Clscatalogo.h" />
 		<Unit filename="include/Clsinformes.h" />
+		<Unit filename="include/Clsmaestro.h" />
 		<Unit filename="include/Clsproceso.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Clsalumno.cpp" />
 		<Unit filename="src/Clscatalogo.cpp" />
 		<Unit filename="src/Clsinformes.cpp" />
+		<Unit filename="src/Clsmaestro.cpp" />
 		<Unit filename="src/Clsproceso.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
