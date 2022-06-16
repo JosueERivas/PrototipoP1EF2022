@@ -74,9 +74,8 @@ Clscatalogo::mmenuCatalogo()
                     cout<<"2. Eliminar "<<sclase<<endl;
                     cout<<"3. Modificar "<<sclase<<endl;
                     cout<<"4. Desplegar "<<sclase<<endl;
-                    cout<<"5. Buscar "<<sclase<<endl;
                     cout<<"----------------------------------------"<<endl;
-                    cout<<"OPCIONES A ESCOGER :       [1/2/3/4/5/0]"<<endl;
+                    cout<<"OPCIONES A ESCOGER :         [1/2/3/4/0]"<<endl;
                     cout<<"----------------------------------------"<<endl;
                     cout<<"INGRESA TU OPCION : ";
                     cin>>imenu;
@@ -105,17 +104,10 @@ Clscatalogo::mmenuCatalogo()
                     case 4:
                         {
                             cout<<"USTED ESTA EN EL APARTADO DESPLEGAR "<<sclase<<endl;
-                            //menuAlumno.mdesplegar(archivo);
+                            menuAlumno.mdesplegar(archivo);
                             getch();
                         }
                         break;
-                    case 5:
-                    {
-                        cout<<"USTED ESTA EN EL APARTADO BUSCAR "<<sclase<<endl;
-                        //menuAlumno.mbuscar(archivo);
-                        getch();
-                    }
-                    break;
                     case 0:
                         {
                             archivo.close();

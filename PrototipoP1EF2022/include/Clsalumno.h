@@ -45,6 +45,8 @@ class Clsalumno
         void meliminar(fstream &archivo);
         void mmostrarLineaRegistro( ostream &salida, const Clsalumno &registro );
         void mmodificar(fstream &archivo);
+        void mostrarLinea( const Clsalumno &archivo );
+        void mdesplegar(fstream &archivo);
 
         virtual ~Clsalumno();
 

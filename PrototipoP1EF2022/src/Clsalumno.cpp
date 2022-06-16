@@ -74,7 +74,7 @@ void Clsalumno::mestablecerNombres( string cadena )
    // copiar a lo más 20 caracteres de la cadena
    const char *valor = cadena.data();
    int ilongitud = strlen( valor );
-   ilongitud = ( ilongitud < 10 ? ilongitud : 9 );
+   ilongitud = ( ilongitud < 20 ? ilongitud : 19 );
    strncpy( snombres, valor, ilongitud );
    // anexar caracter nulo al final de la cadena
    snombres[ ilongitud ] = '\0';
@@ -106,7 +106,7 @@ void Clsalumno::mestablecerApellidos( string cadena )
    // copiar a lo más 20 caracteres de la cadena
    const char *valor = cadena.data();
    int ilongitud = strlen( valor );
-   ilongitud = ( ilongitud < 10 ? ilongitud : 9 );
+   ilongitud = ( ilongitud < 20 ? ilongitud : 19 );
    strncpy( sapellidos, valor, ilongitud );
    // anexar caracter nulo al final de la cadena
    sapellidos[ ilongitud ] = '\0';
@@ -122,7 +122,7 @@ void Clsalumno::mestablecerNacimiento( string cadena )
    // copiar a lo más 20 caracteres de la cadena
    const char *valor = cadena.data();
    int ilongitud = strlen( valor );
-   ilongitud = ( ilongitud < 10 ? ilongitud : 9 );
+   ilongitud = ( ilongitud < 15 ? ilongitud : 14 );
    strncpy( snacimiento, valor, ilongitud );
    // anexar caracter nulo al final de la cadena
    snacimiento[ ilongitud ] = '\0';
@@ -170,7 +170,7 @@ void Clsalumno::mestablecerCorreo( string cadena )
    // copiar a lo más 20 caracteres de la cadena
    const char *valor = cadena.data();
    int ilongitud = strlen( valor );
-   ilongitud = ( ilongitud < 10 ? ilongitud : 9 );
+   ilongitud = ( ilongitud < 30 ? ilongitud : 29 );
    strncpy( scorreo, valor, ilongitud );
    // anexar caracter nulo al final de la cadena
    scorreo[ ilongitud ] = '\0';
@@ -186,7 +186,7 @@ void Clsalumno::mestablecerDireccion( string cadena )
    // copiar a lo más 20 caracteres de la cadena
    const char *valor = cadena.data();
    int ilongitud = strlen( valor );
-   ilongitud = ( ilongitud < 10 ? ilongitud : 9 );
+   ilongitud = ( ilongitud < 30 ? ilongitud : 29 );
    strncpy( sdireccion, valor, ilongitud );
    // anexar caracter nulo al final de la cadena
    sdireccion[ ilongitud ] = '\0';
@@ -425,8 +425,61 @@ void Clsalumno::mmodificar(fstream &archivo)
     }
     // mostrar error si la clave no contiene informacion
     else
-    cerr << "La la clave #" << clave
+    {
+        cerr << "La la clave #" << clave
          << " no tiene informacion." << endl;
+    }
+    alumno.~Clsalumno();
+}
+
+void Clsalumno::mostrarLinea( const Clsalumno &archivo )
+{
+           cout << left << setw( 10 ) << archivo.mobtenerClave()
+           << setw( 10 ) << archivo.mobtenerCarrera()
+          << setw( 10 ) << archivo.mobtenerNombre().data()
+          << setw( 20 ) << archivo.mobtenerNombres().data()
+          << setw( 10 ) << archivo.mobtenerApellido().data()
+          << setw( 20 ) << archivo.mobtenerApellidos().data()
+          << setw( 15 ) << archivo.mobtenerNacimiento().data()
+          << setw( 10 ) << archivo.mobtenerDpi().data()
+          << setw( 10 ) << archivo.mobtenerTelefono().data()
+          << setw( 30 ) << archivo.mobtenerCorreo().data()
+          << setw( 30 ) << archivo.mobtenerDireccion().data()
+          << endl;
+}
+
+void Clsalumno::mdesplegar(fstream &archivo)
+{
+    //Creando encabezado de la tabla
+    cout << left << setw( 10 ) << "Clave"
+    << setw( 10 ) << "Carrera"
+    << setw( 10 ) << "Nombre"
+    << setw( 20 ) << "Nombres"
+    << setw( 10 ) << "Apellido"
+    << setw( 20 ) << "Apellidos"
+    << setw( 15 ) << "F. Nacimiento"
+    << setw( 10 ) << "DPI"
+    << setw( 10 ) << "Telefono"
+    << setw( 30 ) << "Correo"
+    << setw( 30 ) << "Direccion"
+    << endl;
+    // colocar el apuntador de posición de archivo al principio del archivo de registros
+    archivo.seekg( 0 );
+    // leer el primer registro del archivo de registros
+    Clsalumno alumno;
+    archivo.read( reinterpret_cast< char * >( &alumno ),
+    sizeof( Clsalumno ) );
+    // copiar todos los registros del archivo de registros en el archivo de texto
+    while ( !archivo.eof() )
+    {
+        // escribir un registro individual en el archivo de texto
+        if ( alumno.mobtenerClave() != 0 )
+        mostrarLinea(alumno);
+        // leer siguiente registro del archivo de registros
+        archivo.read( reinterpret_cast< char * >( &alumno ),
+        sizeof( Clsalumno ) );
+    }
+    alumno.~Clsalumno();
 }
 
 Clsalumno::~Clsalumno()

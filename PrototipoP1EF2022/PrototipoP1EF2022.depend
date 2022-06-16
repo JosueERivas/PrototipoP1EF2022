@@ -23,7 +23,7 @@
 	<string.h>
 	<Clsalumno.h>
 
-1655407706 source:c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\src\clscatalogo.cpp
+1655409053 source:c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\src\clscatalogo.cpp
 	"Clscatalogo.h"
 	<conio.h>
 	<iostream>
@@ -77,7 +77,7 @@
 	<ctime>
 	<string.h>
 
-1655407351 source:c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\src\clsalumno.cpp
+1655409894 source:c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\src\clsalumno.cpp
 	"Clsalumno.h"
 	<conio.h>
 	<iostream>
@@ -88,7 +88,7 @@
 	<ctime>
 	<string.h>
 
-1655408559 c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\include\clsalumno.h
+1655409533 c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\include\clsalumno.h
 	<conio.h>
 	<iostream>
 	<fstream>
