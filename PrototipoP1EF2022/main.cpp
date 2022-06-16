@@ -11,6 +11,11 @@
 #define ENTER 13
 #define BACKSPACE 8
 
+//Clases
+#include "Clscatalogo.h"
+#include "Clsproceso.h"
+#include "Clsinformes.h"
+
 using namespace std;
 
 typedef struct {
@@ -141,11 +146,6 @@ int login()
         cout<<endl<<endl<<"Realizo login exitoso"<<endl;
         getch();
         int imenuPrincipal=0;
-        cout<<"-----------------------------------------"<<endl;
-        cout<<"---Nombre: Josue Ernesto Rivas De Leon---"<<endl;
-        cout<<"---------Carné No: 9491 21 3133----------"<<endl;
-        cout<<"|-------BIENVENIDO AL MENU GENERAL-------|"<<endl;
-        cout<<"-----------------------------------------"<<endl;
         //Menu principal
         do
         {
@@ -168,20 +168,23 @@ int login()
             {
             case 1:
                 {
-                    cout<<"Usted esta en el apartado Catalogos";
-                    getch();
+                    Clscatalogo catalogo;
+                    catalogo.mmenuCatalogo();
+                    catalogo.~Clscatalogo();
                 }
                 break;
             case 2:
                 {
-                    cout<<"Usted esta en el apartado Procesos";
-                    getch();
+                    Clsproceso proceso;
+                    proceso.mmenuProceso();
+                    proceso.~Clsproceso();
                 }
                 break;
             case 3:
                 {
-                    cout<<"Usted esta en el apartado Informes";
-                    getch();
+                    Clsinformes informe;
+                    informe.mmenuInforme();
+                    informe.~Clsinformes();
                 }
                 break;
             case 0:
