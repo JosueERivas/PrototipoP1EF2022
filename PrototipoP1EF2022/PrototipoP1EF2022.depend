@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1655398700 source:c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\main.cpp
+1655400835 source:c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\main.cpp
 	<conio.h>
 	<iostream>
 	<fstream>
@@ -9,8 +9,10 @@
 	<ctime>
 	<string.h>
 	"Clscatalogo.h"
+	"Clsproceso.h"
+	"Clsinformes.h"
 
-1655397416 c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\include\clscatalogo.h
+1655406087 c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\include\clscatalogo.h
 	<conio.h>
 	<iostream>
 	<fstream>
@@ -19,8 +21,9 @@
 	<cstdlib>
 	<ctime>
 	<string.h>
+	<Clsalumno.h>
 
-1655397416 source:c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\src\clscatalogo.cpp
+1655409053 source:c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\src\clscatalogo.cpp
 	"Clscatalogo.h"
 	<conio.h>
 	<iostream>
@@ -30,8 +33,9 @@
 	<cstdlib>
 	<ctime>
 	<string.h>
+	<Clsalumno.h>
 
-1655400216 source:c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\src\clsproceso.cpp
+1655400835 source:c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\src\clsproceso.cpp
 	"Clsproceso.h"
 	<conio.h>
 	<iostream>
@@ -42,7 +46,49 @@
 	<ctime>
 	<string.h>
 
-1655400216 c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\include\clsproceso.h
+1655400835 c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\include\clsproceso.h
+	<conio.h>
+	<iostream>
+	<fstream>
+	<string>
+	<iomanip>
+	<cstdlib>
+	<ctime>
+	<string.h>
+
+1655400835 c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\include\clsinformes.h
+	<conio.h>
+	<iostream>
+	<fstream>
+	<string>
+	<iomanip>
+	<cstdlib>
+	<ctime>
+	<string.h>
+
+1655400835 source:c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\src\clsinformes.cpp
+	"Clsinformes.h"
+	<conio.h>
+	<iostream>
+	<fstream>
+	<string>
+	<iomanip>
+	<cstdlib>
+	<ctime>
+	<string.h>
+
+1655409894 source:c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\src\clsalumno.cpp
+	"Clsalumno.h"
+	<conio.h>
+	<iostream>
+	<fstream>
+	<string>
+	<iomanip>
+	<cstdlib>
+	<ctime>
+	<string.h>
+
+1655409533 c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\include\clsalumno.h
 	<conio.h>
 	<iostream>
 	<fstream>
