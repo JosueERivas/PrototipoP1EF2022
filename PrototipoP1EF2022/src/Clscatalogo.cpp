@@ -10,6 +10,9 @@
 #include<ctime>
 #include <string.h>
 
+//Clases
+#include<Clsalumno.h>
+
 using namespace std;
 
 Clscatalogo::Clscatalogo()
@@ -47,6 +50,7 @@ Clscatalogo::mmenuCatalogo()
         case 1:
             {
                 string sclase="ALUMNOS";
+                Clsalumno menuAlumno;
                 int imenu=0;
                 //Menu catalogo
                 do
@@ -71,7 +75,17 @@ Clscatalogo::mmenuCatalogo()
                     case 1:
                         {
                             cout<<"USTED ESTA EN EL APARTADO AGREGAR "<<sclase<<endl;
-                            getch();
+                            fstream archivo("alumno.dat", ios::in | ios::out | ios::binary);
+                            // salir del programa si fstream no puede abrir el archivo
+                            if ( !archivo )
+                                {
+                                    cerr << "No se pudo abrir el archivo." << endl;
+                                    menuAlumno.mcrearArchivo();
+                                    cout <<  "Archivo creado satisfactoriamente, pruebe de nuevo";
+                                    exit ( 1 );
+                                }
+                            menuAlumno.magregar(archivo);
+                            archivo.close();
                         }
                         break;
                     case 2:
@@ -100,6 +114,7 @@ Clscatalogo::mmenuCatalogo()
                         break;
                     }
                 }while(imenu!=0);
+                menuAlumno.~Clsalumno();
             }
             break;
         case 2:
