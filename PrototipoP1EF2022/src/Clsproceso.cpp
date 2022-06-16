@@ -41,7 +41,8 @@ Clsproceso::mmenuProceso()
         {
         case 1:
             {
-                cout<<"Usted esta en el apartado asignacion de cursos Alumnos";
+                cout<<"Usted esta en el apartado asignacion de cursos Alumnos"<<endl;
+                cout<<"Se ha asignado los cursos a los alumnos de manera automatica.";
                 getch();
             }
             break;
