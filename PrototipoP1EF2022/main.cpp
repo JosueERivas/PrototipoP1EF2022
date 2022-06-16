@@ -140,10 +140,59 @@ int login()
     if((usuarioExiste)&&(passwordCorrecto)){
         cout<<endl<<endl<<"Realizo login exitoso"<<endl;
         getch();
-        system("cls");
-        cout << "Hello world!" << endl;
+        int imenuPrincipal=0;
+        cout<<"-----------------------------------------"<<endl;
+        cout<<"---Nombre: Josue Ernesto Rivas De Leon---"<<endl;
+        cout<<"---------Carné No: 9491 21 3133----------"<<endl;
+        cout<<"|-------BIENVENIDO AL MENU GENERAL-------|"<<endl;
+        cout<<"-----------------------------------------"<<endl;
+        //Menu principal
+        do
+        {
+            system("cls");
+            cout<<"-----------------------------------------"<<endl;
+            cout<<"---Nombre: Josue Ernesto Rivas De Leon---"<<endl;
+            cout<<"---------Carné No: 9491 21 3133----------"<<endl;
+            cout<<"|-------BIENVENIDO AL MENU GENERAL-------|"<<endl;
+            cout<<"-----------------------------------------"<<endl;
+            cout<<"1. CATALOGOS"<<endl;
+            cout<<"2. PROCESOS"<<endl;
+            cout<<"3. INFORMES"<<endl;
+            cout<<"0. SALIR DEL SISTEMA"<<endl;
+            cout<<"----------------------------------------"<<endl;
+            cout<<"OPCIONES A ESCOGER :           [1/2/3/0]"<<endl;
+            cout<<"----------------------------------------"<<endl;
+            cout<<"INGRESA TU OPCION : ";
+            cin>>imenuPrincipal;
+            switch (imenuPrincipal)
+            {
+            case 1:
+                {
+                    cout<<"Usted esta en el apartado Catalogos";
+                    getch();
+                }
+                break;
+            case 2:
+                {
+                    cout<<"Usted esta en el apartado Procesos";
+                    getch();
+                }
+                break;
+            case 3:
+                {
+                    cout<<"Usted esta en el apartado Informes";
+                    getch();
+                }
+                break;
+            case 0:
+                break;
+            default:
+                cout<<"Valor ingresado no vádido, intente de nuevo";
+                getch();
+                break;
+            }
+        }while(imenuPrincipal!=0);
     }
-
     fclose(arch);
 }
 
