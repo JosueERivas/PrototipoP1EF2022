@@ -35,6 +35,7 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Clsalumno.h" />
+		<Unit filename="include/ClsasignacionAlumno.h" />
 		<Unit filename="include/Clscarrera.h" />
 		<Unit filename="include/Clscatalogo.h" />
 		<Unit filename="include/Clsinformes.h" />
@@ -42,6 +43,7 @@
 		<Unit filename="include/Clsproceso.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Clsalumno.cpp" />
+		<Unit filename="src/ClsasignacionAlumno.cpp" />
 		<Unit filename="src/Clscarrera.cpp" />
 		<Unit filename="src/Clscatalogo.cpp" />
 		<Unit filename="src/Clsinformes.cpp" />
