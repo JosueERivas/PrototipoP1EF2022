@@ -37,7 +37,7 @@
 	<Clsmaestro.h>
 	<Clscarrera.h>
 
-1655416168 source:c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\src\clsproceso.cpp
+1655416719 source:c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\src\clsproceso.cpp
 	"Clsproceso.h"
 	<conio.h>
 	<iostream>
@@ -134,7 +134,7 @@
 1655414491 source:c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\src\clscarrera.cpp
 	"Clscarrera.h"
 
-1655416349 source:c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\src\clsasignacionalumno.cpp
+1655416719 source:c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\src\clsasignacionalumno.cpp
 	"ClsasignacionAlumno.h"
 	<conio.h>
 	<iostream>
@@ -145,7 +145,7 @@
 	<ctime>
 	<string.h>
 
-1655416262 c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\include\clsasignacionalumno.h
+1655416719 c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\include\clsasignacionalumno.h
 	<conio.h>
 	<iostream>
 	<fstream>
