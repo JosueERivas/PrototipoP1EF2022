@@ -13,8 +13,127 @@
 
 using namespace std;
 
-int main()
+typedef struct {
+    char usuario[10],contrasenia[10];
+} tlogin;
+
+void pausa();
+
+void continuar(){
+    printf("Presione una tecla para continuar\n\n");
+    getch();
+}
+
+
+void crear(){
+    FILE *arch;
+    arch=fopen("login.dat","wb");
+    if (arch==NULL)
+        exit(1);
+    fclose(arch);
+}
+
+void cargar(){
+    FILE *arch;
+    arch=fopen("login.dat","ab");
+    if (arch==NULL){
+        void crear();
+    }else{
+        tlogin login;
+        printf("Ingrese usuario: ");
+        scanf("%s",&login.usuario);
+        fflush(stdin);
+        printf("Ingrese password: ");
+        scanf("%s",&login.contrasenia);
+        fwrite(&login, sizeof(tlogin), 1, arch);
+        fclose(arch);
+    }
+}
+
+void listado(){
+
+    FILE *arch;
+    arch=fopen("login.dat","rb");
+    if (arch==NULL)
+        exit(1);
+    tlogin login;
+    fread(&login, sizeof(tlogin), 1, arch);
+
+    printf("%s %s\n", "USUARIO", "PASSW0RD");
+
+    while(!feof(arch))
+    {
+        printf("%s %s\n", login.usuario, login.contrasenia);
+        fread(&login, sizeof(tlogin), 1, arch);
+    }
+    fclose(arch);
+}
+
+int login()
 {
     cout << "Hello world!" << endl;
     return 0;
+}
+
+int main(){
+    bool bandera=false;
+    char tecla;
+
+    do
+    {
+        system("cls");
+        cin.clear();
+        cout<<"-----------------------------------------"<<endl;
+        cout<<"---Nombre: Josue Ernesto Rivas De Leon---"<<endl;
+        cout<<"---------Carné No: 9491 21 3133----------"<<endl;
+        cout<<"|----------BIENVENIDO AL LOGIN----------|"<<endl;
+        cout<<"-----------------------------------------"<<endl;
+        cout << "\t1 .- REGISTRAR USUARIOS" << endl;
+        cout << "\t2 .- LISTAR USUARIOS" << endl;
+        cout << "\t3 .- LOGIN" << endl;
+        cout << "\t0 .- SALIR" << endl << endl;
+        cout << "Elije una opcion: ";
+
+        cin >> tecla;
+
+		switch(tecla)
+		{
+			case '1':
+				system("cls");
+				cargar();
+				pausa();
+				break;
+
+			case '2':
+				system("cls");
+				listado();
+				pausa();
+				break;
+
+            case '3':
+				system("cls");
+				login();
+				pausa();
+				break;
+
+			case '0':
+				bandera=true;
+				break;
+
+			default:
+				system("cls");
+				cout << "Opcion no valida.\a\n";
+				pausa();
+				break;
+		}
+    }while(bandera!=true);
+
+    return 0;
+}
+
+void pausa()
+{
+    cout <<endl<<"Pulsa una tecla para continuar...";
+    getwchar();
+    getwchar();
 }
