@@ -152,7 +152,7 @@ int login()
             system("cls");
             cout<<"-----------------------------------------"<<endl;
             cout<<"---Nombre: Josue Ernesto Rivas De Leon---"<<endl;
-            cout<<"---------Carné No: 9491 21 3133----------"<<endl;
+            cout<<"---------Carne No: 9491 21 3133----------"<<endl;
             cout<<"|-------BIENVENIDO AL MENU GENERAL-------|"<<endl;
             cout<<"-----------------------------------------"<<endl;
             cout<<"1. CATALOGOS"<<endl;

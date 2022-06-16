@@ -1,5 +1,5 @@
-#ifndef CLSALUMNO_H
-#define CLSALUMNO_H
+#ifndef CLSMAESTRO_H
+#define CLSMAESTRO_H
 
 //Librerias
 #include<conio.h>
@@ -13,10 +13,10 @@
 
 using namespace std;
 
-class Clsalumno
+class Clsmaestro
 {
     public:
-        Clsalumno(int = 0, int = 0, string ="", string ="", string ="", string ="", string ="", string ="", string ="", string ="", string ="");
+        Clsmaestro(int = 0, int = 0, string ="", string ="", string ="", string ="", string ="", string ="", string ="", string ="", string ="");
         void mestablecerClave( int ) ;
         int mobtenerClave() const;
         void mestablecerCarrera( int ) ;
@@ -43,11 +43,11 @@ class Clsalumno
         int mobtenerIndicador( const char * const );
         void magregar(fstream &archivo);
         void meliminar(fstream &archivo);
-        void mmostrarLineaRegistro( ostream &salida, const Clsalumno &registro );
+        void mmostrarLineaRegistro( ostream &salida, const Clsmaestro &registro );
         void mmodificar(fstream &archivo);
-        void mostrarLinea( const Clsalumno &archivo );
+        void mostrarLinea( const Clsmaestro &archivo );
         void mdesplegar(fstream &archivo);
-        virtual ~Clsalumno();
+        virtual ~Clsmaestro();
 
     protected:
 
@@ -65,4 +65,4 @@ class Clsalumno
         char sdireccion[30];
 };
 
-#endif // CLSALUMNO_H
+#endif // CLSMAESTRO_H
