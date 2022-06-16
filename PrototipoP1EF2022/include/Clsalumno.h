@@ -1,5 +1,5 @@
-#ifndef CLSCATALOGO_H
-#define CLSCATALOGO_H
+#ifndef CLSALUMNO_H
+#define CLSALUMNO_H
 
 //Librerias
 #include<conio.h>
@@ -13,17 +13,15 @@
 
 using namespace std;
 
-class Clscatalogo
+class Clsalumno
 {
     public:
-        Clscatalogo();
-        mmenuCatalogo();
-        void mmenuCrud(string);
-        virtual ~Clscatalogo();
+        Clsalumno();
+        virtual ~Clsalumno();
 
     protected:
 
     private:
 };
 
-#endif // CLSCATALOGO_H
+#endif // CLSALUMNO_H

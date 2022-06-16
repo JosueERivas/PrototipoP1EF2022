@@ -36,7 +36,6 @@ Clscatalogo::mmenuCatalogo()
         cout<<"5. Carreras"<<endl;
         cout<<"6. Cursos"<<endl;
         cout<<"7. Sedes"<<endl;
-        cout<<"8. Aulas"<<endl;
         cout<<"0. Regresar"<<endl;
         cout<<"----------------------------------------"<<endl;
         cout<<"OPCIONES A ESCOGER : [1/2/3/4/5/6/7/8/0]"<<endl;
@@ -47,14 +46,117 @@ Clscatalogo::mmenuCatalogo()
         {
         case 1:
             {
-                cout<<"Usted esta en el apartado Alumnos";
-                getch();
+                string sclase="ALUMNOS";
+                int imenu=0;
+                //Menu catalogo
+                do
+                {
+                    system("cls");
+                    cout<<"-----------------------------------------"<<endl;
+                    cout<<"---Nombre: Josue Ernesto Rivas De Leon---"<<endl;
+                    cout<<"---------Carné No: 9491 21 3133----------"<<endl;
+                    cout<<"BIENVENIDO A GESTION DE"<<sclase<<endl;
+                    cout<<"-----------------------------------------"<<endl;
+                    cout<<"1. Agregar "<<sclase<<endl;
+                    cout<<"2. Eliminar "<<sclase<<endl;
+                    cout<<"3. Modificar "<<sclase<<endl;
+                    cout<<"4. Desplegar "<<sclase<<endl;
+                    cout<<"----------------------------------------"<<endl;
+                    cout<<"OPCIONES A ESCOGER :         [1/2/3/4/0]"<<endl;
+                    cout<<"----------------------------------------"<<endl;
+                    cout<<"INGRESA TU OPCION : ";
+                    cin>>imenu;
+                    switch (imenu)
+                    {
+                    case 1:
+                        {
+                            cout<<"USTED ESTA EN EL APARTADO AGREGAR "<<sclase<<endl;
+                            getch();
+                        }
+                        break;
+                    case 2:
+                        {
+                            cout<<"USTED ESTA EN EL APARTADO ELIMINAR "<<sclase<<endl;
+                            getch();
+                        }
+                        break;
+                    case 3:
+                        {
+                            cout<<"USTED ESTA EN EL APARTADO MODIFICAR "<<sclase<<endl;
+                            getch();
+                        }
+                        break;
+                    case 4:
+                        {
+                            cout<<"USTED ESTA EN EL APARTADO DESPLEGAR "<<sclase<<endl;
+                            getch();
+                        }
+                        break;
+                    case 0:
+                        break;
+                    default:
+                        cout<<"Valor ingresado no vádido, intente de nuevo";
+                        getch();
+                        break;
+                    }
+                }while(imenu!=0);
             }
             break;
         case 2:
             {
-                cout<<"Usted esta en el apartado Maestros";
-                getch();
+                string sclase="MAESTROS";
+                int imenu=0;
+                //Menu catalogo
+                do
+                {
+                    system("cls");
+                    cout<<"-----------------------------------------"<<endl;
+                    cout<<"---Nombre: Josue Ernesto Rivas De Leon---"<<endl;
+                    cout<<"---------Carné No: 9491 21 3133----------"<<endl;
+                    cout<<"BIENVENIDO A GESTION DE"<<sclase<<endl;
+                    cout<<"-----------------------------------------"<<endl;
+                    cout<<"1. Agregar "<<sclase<<endl;
+                    cout<<"2. Eliminar "<<sclase<<endl;
+                    cout<<"3. Modificar "<<sclase<<endl;
+                    cout<<"4. Desplegar "<<sclase<<endl;
+                    cout<<"----------------------------------------"<<endl;
+                    cout<<"OPCIONES A ESCOGER :         [1/2/3/4/0]"<<endl;
+                    cout<<"----------------------------------------"<<endl;
+                    cout<<"INGRESA TU OPCION : ";
+                    cin>>imenu;
+                    switch (imenu)
+                    {
+                    case 1:
+                        {
+                            cout<<"USTED ESTA EN EL APARTADO AGREGAR "<<sclase<<endl;
+                        }
+                        break;
+                    case 2:
+                        {
+                            cout<<"USTED ESTA EN EL APARTADO ELIMINAR "<<sclase<<endl;
+                            getch();
+                        }
+                        break;
+                    case 3:
+                        {
+                            cout<<"USTED ESTA EN EL APARTADO MODIFICAR "<<sclase<<endl;
+                            getch();
+                        }
+                        break;
+                    case 4:
+                        {
+                            cout<<"USTED ESTA EN EL APARTADO DESPLEGAR "<<sclase<<endl;
+                            getch();
+                        }
+                        break;
+                    case 0:
+                        break;
+                    default:
+                        cout<<"Valor ingresado no vádido, intente de nuevo";
+                        getch();
+                        break;
+                    }
+                }while(imenu!=0);
             }
             break;
         case 3:
