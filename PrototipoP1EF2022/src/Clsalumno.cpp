@@ -205,6 +205,7 @@ Clsalumno::mcrearArchivo()
     {
         archivo.write(reinterpret_cast<const char * > (&enBlanco), sizeof(Clsalumno));
     }
+    enBlanco.~Clsalumno();
 }
 
 int Clsalumno::mobtenerIndicador(const char * const iindicador)
@@ -291,6 +292,39 @@ void Clsalumno::magregar(fstream &archivo)
        cerr << "La clave #" << clave << " ya contiene informacion." << endl;
        getch();
    }
+   alumno.~Clsalumno();
+}
+
+void Clsalumno::meliminar(fstream &archivo)
+{
+    int iindicador= mobtenerIndicador( "Escriba la clave a eliminar" );
+    // desplazar el apuntador de posición de archivo hasta el registro correcto en el archivo
+    archivo.seekg(
+    ( iindicador - 1 ) * sizeof( Clsalumno ) );
+    // leer el registro del archivo
+    Clsalumno alumno;
+    archivo.read( reinterpret_cast< char * >( &alumno ),
+    sizeof( Clsalumno ) );
+    // eliminar el registro, si es que existe en el archivo
+    if ( alumno.mobtenerClave() != 0 )
+    {
+        Clsalumno enBlanco;
+        // desplazar el apuntador de posición de archivo hasta el registro correcto en el archivo
+        archivo.seekp( ( iindicador - 1 ) *
+        sizeof( Clsalumno ) );
+        // reemplazar el registro existente con un registro en blanco
+        archivo.write(
+        reinterpret_cast< const char * >( &enBlanco ),
+        sizeof( Clsalumno ) );
+        cout << "Empleado clave #" << iindicador << " eliminado correctamente.\n";
+        enBlanco.~Clsalumno();
+   }
+   // mostrar error si el registro esta vacio
+   else
+   {
+       cerr << "Empleado clave #" << iindicador << " esta vacia.\n";
+   }
+   getch();
 }
 
 Clsalumno::~Clsalumno()

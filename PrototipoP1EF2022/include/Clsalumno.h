@@ -42,6 +42,7 @@ class Clsalumno
         mcrearArchivo();
         int mobtenerIndicador( const char * const );
         void magregar(fstream &alumno);
+        void meliminar(fstream &archivo);
 
         virtual ~Clsalumno();
 
