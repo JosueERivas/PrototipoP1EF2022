@@ -71,8 +71,80 @@ void listado(){
 
 int login()
 {
-    cout << "Hello world!" << endl;
-    return 0;
+    FILE *arch;
+    arch=fopen("login.dat","rb");
+    if (arch==NULL)
+        exit(1);
+
+    char pusuario[10],pcontrasenia[10];
+    cout<<"Ingrese usuario: ";
+    cin>>pusuario;
+
+    cout<<"Ingrese password: ";
+    //cin>>pcontrasenia;
+
+    char caracter;
+    caracter = getch();
+
+     string   password = "";
+
+        while (caracter != ENTER)
+        {
+
+            if (caracter != BACKSPACE)
+            {
+                password.push_back(caracter);
+                cout << "*";
+            }
+            else
+            {
+                if (password.length() > 0)
+                {
+                    cout << "\b \b";
+                    password = password.substr(0, password.length() - 1);
+                }
+            }
+
+            caracter = getch();
+        }
+
+    strcpy(pcontrasenia, password.c_str());
+
+
+    tlogin login;
+
+    fread(&login, sizeof(tlogin), 1, arch);
+    bool usuarioExiste = false;
+    bool passwordCorrecto = false;
+
+    while(!feof(arch)){
+
+        if(strcmp(pusuario,login.usuario)==0){
+            usuarioExiste = true;
+        }
+
+        if(strcmp(pcontrasenia,login.contrasenia)==0){
+            passwordCorrecto = true;
+        }
+        fread(&login, sizeof(tlogin), 1, arch);
+
+    }
+
+    if (!usuarioExiste){
+        cout<<endl<<endl<<"El usuario ingresado no existe";
+    }
+    if (!passwordCorrecto){
+        cout<<endl<<endl<<"Password incorrecto";
+    }
+
+    if((usuarioExiste)&&(passwordCorrecto)){
+        cout<<endl<<endl<<"Realizo login exitoso"<<endl;
+        getch();
+        system("cls");
+        cout << "Hello world!" << endl;
+    }
+
+    fclose(arch);
 }
 
 int main(){
