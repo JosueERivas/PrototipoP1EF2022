@@ -1,5 +1,16 @@
 # depslib dependency file v1.0
-1655392904 source:c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\main.cpp
+1655397132 source:c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\main.cpp
+	<conio.h>
+	<iostream>
+	<fstream>
+	<string>
+	<iomanip>
+	<cstdlib>
+	<ctime>
+	<string.h>
+	"Clscatalogo.h"
+
+1655397416 c:\users\user\onedrive\documentos\mariano\proyectosprograi\prototipop1ef2022\prototipop1ef2022\include\clscatalogo.h
 	<conio.h>
 	<iostream>
 	<fstream>

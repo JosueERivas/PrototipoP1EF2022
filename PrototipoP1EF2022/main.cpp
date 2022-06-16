@@ -166,8 +166,8 @@ int login()
             {
             case 1:
                 {
-                    cout<<"Usted esta en el apartado Catalogos";
-                    getch();
+                    Clscatalogo catalogo;
+                    catalogo.mmenuCatalogo();
                 }
                 break;
             case 2:
