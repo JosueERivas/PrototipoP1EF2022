@@ -41,13 +41,13 @@ Clsproceso::mmenuProceso()
         {
         case 1:
             {
-                cout<<"Usted esta en el apartado Alumnos";
+                cout<<"Usted esta en el apartado asignacion de cursos Alumnos";
                 getch();
             }
             break;
         case 2:
             {
-                cout<<"Usted esta en el apartado Maestros";
+                cout<<"Usted esta en el apartado asignacion de cursos Maestros";
                 getch();
             }
             break;
