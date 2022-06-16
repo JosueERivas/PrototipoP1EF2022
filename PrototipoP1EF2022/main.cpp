@@ -11,6 +11,9 @@
 #define ENTER 13
 #define BACKSPACE 8
 
+//Clases
+#include "Clscatalogo.h"
+
 using namespace std;
 
 typedef struct {
@@ -141,11 +144,6 @@ int login()
         cout<<endl<<endl<<"Realizo login exitoso"<<endl;
         getch();
         int imenuPrincipal=0;
-        cout<<"-----------------------------------------"<<endl;
-        cout<<"---Nombre: Josue Ernesto Rivas De Leon---"<<endl;
-        cout<<"---------Carné No: 9491 21 3133----------"<<endl;
-        cout<<"|-------BIENVENIDO AL MENU GENERAL-------|"<<endl;
-        cout<<"-----------------------------------------"<<endl;
         //Menu principal
         do
         {
