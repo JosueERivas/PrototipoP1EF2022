@@ -98,7 +98,7 @@ Clscatalogo::mmenuCatalogo()
                     case 3:
                         {
                             cout<<"USTED ESTA EN EL APARTADO MODIFICAR "<<sclase<<endl;
-                            //menuAlumno.mmodificar(archivo);
+                            menuAlumno.mmodificar(archivo);
                             getch();
                         }
                         break;

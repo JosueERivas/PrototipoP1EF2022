@@ -327,6 +327,108 @@ void Clsalumno::meliminar(fstream &archivo)
    getch();
 }
 
+void Clsalumno::mmostrarLineaRegistro( ostream &salida, const Clsalumno &registro )
+{
+    salida << left << setw( 10 ) << registro.mobtenerClave()
+        << setw( 10 ) << registro.mobtenerCarrera()
+          << setw( 10 ) << registro.mobtenerNombre().data()
+          << setw( 20 ) << registro.mobtenerNombres().data()
+          << setw( 10 ) << registro.mobtenerApellido().data()
+          << setw( 20 ) << registro.mobtenerApellidos().data()
+          << setw( 15 ) << registro.mobtenerNacimiento().data()
+          << setw( 10 ) << registro.mobtenerDpi().data()
+          << setw( 10 ) << registro.mobtenerTelefono().data()
+          << setw( 30 ) << registro.mobtenerCorreo().data()
+          << setw( 30 ) << registro.mobtenerDireccion().data()
+          << endl;
+}
+
+void Clsalumno::mmodificar(fstream &archivo)
+{
+    Clsalumno alumno;
+    int clave = mobtenerIndicador("Ingrese la clave del alumno");
+    archivo.seekg(
+    ( clave - 1 ) * sizeof( Clsalumno ) );
+    // leer el primer registro del archivo
+    archivo.read( reinterpret_cast< char * >( &alumno ),
+    sizeof( Clsalumno ) );
+    // actualizar el registro
+    if ( alumno.mobtenerClave() != 0 )
+    {
+        mmostrarLineaRegistro( cout, alumno );
+        cout << endl;
+        //Atributos a ingresar
+        char m_snombreEmpleado[10];
+        char m_snombresEmpleado[20];
+        char m_sapellidoEmpleado[10];
+        char m_sapellidosEmpleado[20];
+        int m_iCPuesto=0;
+        char m_sdireccionEmpleado[20];
+        char m_stelefonoEmpleado[10];
+        char m_scorreoEmpleado[30];
+        char m_ssexoEmpleado[10];
+        char m_snacionalidadEmpleado[15];
+        char m_snacimientoEmpleado[15];
+       //Atributos a ingresar
+        int carrera=0;
+        char nombre[10];
+        char nombres[20];
+        char apellido[10];
+        char apellidos[20];
+        char nacimiento[15];
+        char dpi[10];
+        char telefono[10];
+        char correo[30];
+        char direccion[30];
+        //Solicitud al usuario de llenar los atributos
+        cout << "Escriba la clave de la carrera del alumno: " << endl;
+        cin >> setw( 10 ) >> carrera;
+        cout << "Escriba el primer nombre del alumno: " << endl;
+        cin >> setw( 10 ) >> nombre;
+        cout << "Escriba segundo y/o tercer nombre del alumno: " << endl;
+        cin >> setw( 20 ) >> nombres;
+        cout << "Escriba el primer apellido del alumno: " << endl;
+        cin >> setw( 10 ) >> apellido;
+        cout << "Escriba segundo y/o tercer apellido del alumno: " << endl;
+        cin >> setw( 20 ) >> apellidos;
+        cout << "Escriba la fecha de nacimiento del alumno: " << endl;
+        cin >> setw( 15 ) >> nacimiento;
+        cout << "Escriba el numero de Identificacion del alumno: " << endl;
+        cin >> setw( 10 ) >> dpi;
+        cout << "Escriba el telefono del alumno: " << endl;
+        cin >> setw( 10 ) >> telefono;
+        cout << "Escriba el correo del alumno: " << endl;
+        cin >> setw( 30 ) >> correo;
+        cout << "Escriba la direccion del alumno: " << endl;
+        cin >> setw( 30 ) >> direccion;
+        // usar valores para llenar los valores de la clave
+        alumno.mestablecerClave( clave );
+        alumno.mestablecerCarrera(carrera);
+        alumno.mestablecerNombre( nombre );
+        alumno.mestablecerNombres(nombres);
+        alumno.mestablecerApellido(apellido);
+        alumno.mestablecerApellidos(apellidos);
+        alumno.mestablecerNacimiento(nacimiento);
+        alumno.mestablecerDpi(dpi);
+        alumno.mestablecerTelefono(telefono);
+        alumno.mestablecerCorreo(correo);
+        alumno.mestablecerDireccion(direccion);
+        mmostrarLineaRegistro( cout, alumno );
+        // desplazar el apuntador de posición de archivo hasta el registro correcto en el archivo
+        archivo.seekp(
+        ( clave - 1 ) * sizeof( Clsalumno ) );
+        // escribir el registro actualizado sobre el registro anterior en el archivo
+        archivo.write(
+        reinterpret_cast< const char * >( &alumno ),
+        sizeof( Clsalumno ) );
+        cout << "Empleado modificado con éxito.";
+    }
+    // mostrar error si la clave no contiene informacion
+    else
+    cerr << "La la clave #" << clave
+         << " no tiene informacion." << endl;
+}
+
 Clsalumno::~Clsalumno()
 {
     //dtor

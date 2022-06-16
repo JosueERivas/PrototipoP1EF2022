@@ -41,8 +41,10 @@ class Clsalumno
         string mobtenerDireccion() const;
         mcrearArchivo();
         int mobtenerIndicador( const char * const );
-        void magregar(fstream &alumno);
+        void magregar(fstream &archivo);
         void meliminar(fstream &archivo);
+        void mmostrarLineaRegistro( ostream &salida, const Clsalumno &registro );
+        void mmodificar(fstream &archivo);
 
         virtual ~Clsalumno();
 
